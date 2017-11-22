@@ -1,0 +1,1 @@
+web: gunicorn Wjoyeria.wsgi --log-file -
