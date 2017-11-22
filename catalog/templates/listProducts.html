@@ -1,0 +1,43 @@
+{% extends "basisHtml.html" %}
+
+{% block content %}
+<div id="blue">
+  <div class="container">
+    <div class="row">
+      <h3>Relojes.</h3>
+    </div>
+  </div>
+</div>
+{% if watches_list %}
+<div id="portfoliowrap">
+  <div class="portfolio-centered">
+    <div class="recentitems portfolio">
+      {% for watch in watches_list %}
+      <div class="portfolio-item graphic-design">
+        <div class="he-wrap tpl6">
+          <img src="{{watch.imagen.url}}" alt="{{watch.image.name}}">
+          <div class="he-view">
+            <div class="bg a0" data-animate="fadeIn">
+              <h3 class="a1" data-animate="fadeInDown" href="{{ watch.get_absolute_url }}">{{ watch.nombre }}</h3>
+              <a data-rel="prettyPhoto" href="{{watch.imagen.url}}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+              <a href="{% url 'watch-detail' watch.pk %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="container mtb">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 centered">
+      <h2>No hay relojes disponibles en este momento.</h2>
+      <br>
+      <div class="hline"></div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

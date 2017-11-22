@@ -1,0 +1,45 @@
+
+{% extends "basisHtml.html" %}
+
+{% block content %}
+
+<div id="blue">
+  <div class="container">
+    <div class="row">
+      <h3>{{watch.nombre}}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container mt">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 centered">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="fixedImage">
+            <img src="{{watch.imagen.url}}" alt="{{watch.imagen.name}}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 col-lg-offset-1">
+      <div class="spacing"></div>
+      <h4>{{watch.nombre}}</h4>
+      <p>{{watch.descipcion}}</p>
+      <h4>Como adquirirlo</h4>
+      <p><br/><a href="#" class="btn btn-theme">Comprar [En construccion]</a></p>
+    </div>
+    <div class="col-lg-4 col-lg-offset-1">
+      <div class="spacing"></div>
+      <h4>Detalles del reloj</h4>
+      <div class="hline"></div>
+      <p><b>Marca:  </b>{{watch.marca}}</p>
+      <p><b>Precio:  </b>{{watch.precio}}  Euros</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
